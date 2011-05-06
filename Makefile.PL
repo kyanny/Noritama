@@ -13,6 +13,7 @@ requires(
     'HTML::FillInForm::Lite'          => 0,
     'Time::Piece'                     => 0,
     'Teng'                            => 0,
+    'JSON'                            => 0,
 );
 recursive_author_tests('xt');
 

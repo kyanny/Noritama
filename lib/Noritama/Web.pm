@@ -46,6 +46,7 @@ __PACKAGE__->load_plugins(
             dir => File::Spec->tmpdir(),
         )
     },
+    'Web::JSON',
 );
 
 # for your security
