@@ -1,5 +1,5 @@
 +{
-    'DBI' => [
+    'Teng' => [
         'dbi:SQLite:dbname=development.db',
         '',
         '',
