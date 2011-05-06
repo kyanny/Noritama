@@ -12,6 +12,7 @@ requires(
     'Plack::Middleware::ReverseProxy' => 0,
     'HTML::FillInForm::Lite'          => 0,
     'Time::Piece'                     => 0,
+    'Teng'                            => 0,
 );
 recursive_author_tests('xt');
 
