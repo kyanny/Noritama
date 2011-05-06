@@ -1,4 +1,4 @@
-package Noritama::Model;
+package Noritama::Model::Post;
 use strict;
 use warnings;
 use parent 'Teng';

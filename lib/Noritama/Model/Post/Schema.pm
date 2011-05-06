@@ -1,4 +1,4 @@
-package Noritama::Model::Schema;
+package Noritama::Model::Post::Schema;
 use strict;
 use warnings;
 use Teng::Schema::Declare;
