@@ -1,6 +1,7 @@
 CREATE TABLE posts (
   id INTEGER PRIMARY KEY,
   post_id TEXT,
+  body TEXT,
   created_at TEXT,
   updated_at TEXT,
   deleted_at TEXT
