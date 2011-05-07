@@ -8,6 +8,7 @@ table {
     name 'posts';
     pk 'id';
     columns qw(
+                  id
                   post_id
                   body
                   created_at
