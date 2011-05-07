@@ -5,7 +5,10 @@ use Amon2::Web::Dispatcher::Lite;
 
 get '/' => sub {
     my ($c) = @_;
-    return $c->render_json([""]);
+
+    my @rows = map { $_->get_columns } $c->teng->search('posts', {}, {'order_by' => 'created_at DESC'});
+
+    return $c->render_json(\@rows);
 };
 
 post '/' => sub {
