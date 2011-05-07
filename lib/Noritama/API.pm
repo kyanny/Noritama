@@ -36,6 +36,9 @@ sub created {
     my ($c, $data) = @_;
     my $res = $c->render_json($data);
     $res->code(201);
+    my $uri = $c->req->uri;
+    $uri->path_segments('api', $data->{post_id});
+    $res->header('Location' => $uri);
     return $res;
 }
 
