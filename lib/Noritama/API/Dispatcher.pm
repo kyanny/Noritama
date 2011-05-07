@@ -20,7 +20,7 @@ post '/' => sub {
         body => $c->req->param('body'),
     }, 'INSERT INTO');
 
-    return $c->render_json($row->get_columns);
+    return $c->created($row->get_columns);
 };
 
 get '/:post_id' => sub {

@@ -32,6 +32,13 @@ __PACKAGE__->add_trigger(
     },
 );
 
+sub created {
+    my ($c, $data) = @_;
+    my $res = $c->render_json($data);
+    $res->code(201);
+    return $res;
+}
+
 sub no_content {
     my $c = shift;
     my $res = $c->render_json({});
