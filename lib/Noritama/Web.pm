@@ -39,7 +39,7 @@ use HTTP::Session::Store::File;
 __PACKAGE__->load_plugins(
     'Web::FillInFormLite',
     'Web::NoCache', # do not cache the dynamic content by default
-    # 'Web::CSRFDefender',
+    'Web::CSRFDefender',
     'Web::HTTPSession' => {
         state => 'Cookie',
         store => HTTP::Session::Store::File->new(
