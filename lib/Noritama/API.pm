@@ -39,4 +39,11 @@ sub bad_request {
     return $res;
 }
 
+sub not_found {
+    my $c = shift;
+    my $res = $c->render_json({});
+    $res->code(404);
+    return $res;
+}
+
 1;

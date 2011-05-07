@@ -24,8 +24,12 @@ post '/' => sub {
 };
 
 get '/:post_id' => sub {
-    my ($c) = @_;
-    return $c->render_json([""]);
+    my ($c, $args) = @_;
+
+    my $row = $c->teng->single('posts', {post_id => $args->{post_id}});
+    return $c->not_found unless $row;
+
+    return $c->render_json($row->get_columns);
 };
 
 any [qw/PUT/] => '/:post_id' => sub {
