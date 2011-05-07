@@ -13,7 +13,14 @@ get '/' => sub {
 
 post '/' => sub {
     my ($c) = @_;
-    return $c->render_json([""]);
+
+    return $c->bad_request("`body' is required") unless $c->req->param('body');
+
+    my $row = $c->teng->insert('posts', {
+        body => $c->req->param('body'),
+    }, 'INSERT INTO');
+
+    return $c->render_json($row->get_columns);
 };
 
 get '/:post_id' => sub {
