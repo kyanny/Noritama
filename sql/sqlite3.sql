@@ -3,7 +3,6 @@ CREATE TABLE posts (
   post_id TEXT,
   body TEXT,
   created_at TEXT,
-  updated_at TEXT,
-  deleted_at TEXT
+  updated_at TEXT
 );
 CREATE INDEX index_posts_on_post_id ON posts (post_id);

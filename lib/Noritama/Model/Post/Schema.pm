@@ -13,7 +13,6 @@ table {
                   body
                   created_at
                   updated_at
-                  deleted_at
           );
 
     inflate 'created_at' => sub {
@@ -33,16 +32,6 @@ table {
         my ($col_value) = @_;
         return ref $col_value ? $col_value->mysql_datetime : $col_value;
     };
-
-    inflate 'deleted_at' => sub {
-        my ($col_value) = @_;
-        return Time::Piece::MySQL->from_mysql_datetime($col_value);
-    };
-    deflate 'deleted_at' => sub {
-        my ($col_value) = @_;
-        return ref $col_value ? $col_value->mysql_datetime : $col_value;
-    };
-
 };
 
 1;
