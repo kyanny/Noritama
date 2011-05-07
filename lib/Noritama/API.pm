@@ -47,8 +47,8 @@ sub bad_request {
 }
 
 sub not_found {
-    my $c = shift;
-    my $res = $c->render_json({});
+    my ($c, $message) = @_;
+    my $res = $c->render_json({"error" => $message});
     $res->code(404);
     return $res;
 }

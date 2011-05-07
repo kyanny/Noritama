@@ -27,7 +27,7 @@ get '/:post_id' => sub {
     my ($c, $args) = @_;
 
     my $row = $c->teng->single('posts', {post_id => $args->{post_id}});
-    return $c->not_found unless $row;
+    return $c->not_found('post not found') unless $row;
 
     return $c->render_json($row->get_columns);
 };
